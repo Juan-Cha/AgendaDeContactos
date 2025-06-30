@@ -1,0 +1,192 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="ProyectoFinalAgenda.Site1" %>
+<!DOCTYPE html>
+<html lang="es">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title><%: Page.Title %> - Agenda de Contactos</title>
+    <!-- Google Fonts: Segoe UI (alternativa para web) -->
+    <link href="https://fonts.googleapis.com/css?family=Segoe+UI:400,600&display=swap" rel="stylesheet" />
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body {
+            background: #f7f9fb;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0; padding: 0;
+            min-height: 100vh;
+            display: flex; flex-direction: column;
+        }
+        .main-container {
+            margin: 40px auto 0 auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 2px 16px #0002;
+            max-width: 520px;
+            width: 96%;
+            padding: 32px 28px 22px 28px;
+            animation: fadeInUp .7s;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px);}
+            to   { opacity: 1; transform: none;}
+        }
+        .header-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #0062cc;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: .5px;
+        }
+        .footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 18px 0 10px 0;
+            color: #888;
+            font-size: 1rem;
+        }
+        /* Botones de icono */
+        .btn-icon {
+            background: #0099ff;
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            padding: 10px 16px;
+            font-size: 1.1rem;
+            transition: background 0.2s, transform .15s;
+            margin: 2px;
+            cursor: pointer;
+        }
+        .btn-icon:hover, .btn-icon:focus {
+            background: #005fbb;
+            transform: translateY(-2px) scale(1.08);
+        }
+        /* Inputs minimalistas */
+        .input-txt, input[type=text], input[type=email] {
+            border-radius: 10px;
+            border: 1.2px solid #dbe2e8;
+            padding: 9px 12px;
+            margin: 4px 0 12px 0;
+            width: 100%;
+            font-size: 1rem;
+            transition: border .2s;
+            box-sizing: border-box;
+        }
+        .input-txt:focus, input[type=text]:focus, input[type=email]:focus {
+            border: 1.3px solid #0099ff;
+            outline: none;
+        }
+        /* Tabla minimalista */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 18px;
+            border-radius: 12px;
+            overflow: hidden;
+            font-size: 1rem;
+            background: #f5f8fa;
+            animation: fadeInUp .6s;
+        }
+        th, td {
+            padding: 10px 8px;
+            text-align: left;
+        }
+        th {
+            background: #e2eaf3;
+            font-weight: 600;
+            color: #0080cc;
+        }
+        tr:nth-child(even) { background: #f4f7fb; }
+        tr:hover { background: #e6f2fc; transition: background 0.2s;}
+        /* Responsive */
+        @media (max-width: 700px) {
+            .main-container { padding: 14px 6vw; }
+            .header-title { font-size: 1.35rem; }
+            table, th, td { font-size: .98rem;}
+        }
+        .table {
+            table-layout: fixed !important;
+            word-break: break-word;
+            width: 100% !important;
+        }
+        .table th, .table td {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 120px;
+            vertical-align: middle;
+        }
+        .table th {
+            text-align: center;
+        }
+
+        .table td:last-child, .table th:last-child {
+            min-width: 90px !important;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .table td {
+            padding-top: 9px !important;
+            padding-bottom: 9px !important;
+        }
+
+        @media (max-width: 700px) {
+            .table th, .table td { max-width: 54px; font-size: .98rem; }
+        }
+
+        .action-btn {
+            background: #0099ff;
+            border: none;
+            border-radius: 50%;
+            color: #fff;
+            width: 38px;
+            height: 38px;
+            font-size: 1.35em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background .2s, box-shadow .2s, transform .13s;
+            box-shadow: 0 1.5px 8px #0099ff22;
+            margin: 0 4px;
+            cursor: pointer;
+            outline: none;
+            border: 2px solid transparent;
+        }
+        .action-btn:hover, .action-btn:focus {
+            background: #005fb2;
+            transform: scale(1.11);
+            border: 2px solid #005fb2;
+        }
+        .action-btn.delete {
+            background: #ff3e43;
+            box-shadow: 0 1.5px 8px #ff3e4322;
+        }
+        .action-btn.delete:hover, .action-btn.delete:focus {
+            background: #c41822;
+            border: 2px solid #c41822;
+        }
+
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="main-container">
+            <div class="header-title">
+                <i class="fa-solid fa-address-book"></i>
+                <span>Agenda de Contactos</span>
+            </div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+        <div class="footer">
+            &copy; <%= DateTime.Now.Year %> Agenda de Contactos - Proyecto Final ISC Juan Chavez
+        </div>
+    </form>
+</body>
+</html>

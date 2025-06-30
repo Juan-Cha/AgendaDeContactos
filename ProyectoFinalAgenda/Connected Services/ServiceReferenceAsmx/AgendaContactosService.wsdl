@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactos">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetContactosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContactosResult" type="tns:ArrayOfContacto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfContacto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Contacto" nillable="true" type="tns:Contacto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Contacto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Direccion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetContactoPorId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactoPorIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContactoPorIdResult" type="tns:Contacto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarContacto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="c" type="tns:Contacto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarContactoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EditarContacto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="c" type="tns:Contacto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditarContactoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EliminarContacto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarContactoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EliminarContactoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactosSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContactos" />
+  </wsdl:message>
+  <wsdl:message name="GetContactosSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContactosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactoPorIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContactoPorId" />
+  </wsdl:message>
+  <wsdl:message name="GetContactoPorIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContactoPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarContactoSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarContacto" />
+  </wsdl:message>
+  <wsdl:message name="AgregarContactoSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarContactoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditarContactoSoapIn">
+    <wsdl:part name="parameters" element="tns:EditarContacto" />
+  </wsdl:message>
+  <wsdl:message name="EditarContactoSoapOut">
+    <wsdl:part name="parameters" element="tns:EditarContactoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarContactoSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarContacto" />
+  </wsdl:message>
+  <wsdl:message name="EliminarContactoSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarContactoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AgendaContactosService1Soap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactos">
+      <wsdl:input message="tns:GetContactosSoapIn" />
+      <wsdl:output message="tns:GetContactosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactoPorId">
+      <wsdl:input message="tns:GetContactoPorIdSoapIn" />
+      <wsdl:output message="tns:GetContactoPorIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarContacto">
+      <wsdl:input message="tns:AgregarContactoSoapIn" />
+      <wsdl:output message="tns:AgregarContactoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditarContacto">
+      <wsdl:input message="tns:EditarContactoSoapIn" />
+      <wsdl:output message="tns:EditarContactoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarContacto">
+      <wsdl:input message="tns:EliminarContactoSoapIn" />
+      <wsdl:output message="tns:EliminarContactoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AgendaContactosService1Soap" type="tns:AgendaContactosService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactos">
+      <soap:operation soapAction="http://tempuri.org/GetContactos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactoPorId">
+      <soap:operation soapAction="http://tempuri.org/GetContactoPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarContacto">
+      <soap:operation soapAction="http://tempuri.org/AgregarContacto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarContacto">
+      <soap:operation soapAction="http://tempuri.org/EditarContacto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarContacto">
+      <soap:operation soapAction="http://tempuri.org/EliminarContacto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AgendaContactosService1Soap12" type="tns:AgendaContactosService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactos">
+      <soap12:operation soapAction="http://tempuri.org/GetContactos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactoPorId">
+      <soap12:operation soapAction="http://tempuri.org/GetContactoPorId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarContacto">
+      <soap12:operation soapAction="http://tempuri.org/AgregarContacto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarContacto">
+      <soap12:operation soapAction="http://tempuri.org/EditarContacto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarContacto">
+      <soap12:operation soapAction="http://tempuri.org/EliminarContacto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AgendaContactosService1">
+    <wsdl:port name="AgendaContactosService1Soap" binding="tns:AgendaContactosService1Soap">
+      <soap:address location="https://localhost:44363/Servicios/AgendaContactosService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AgendaContactosService1Soap12" binding="tns:AgendaContactosService1Soap12">
+      <soap12:address location="https://localhost:44363/Servicios/AgendaContactosService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,9 @@
+C:\Users\jddca\source\repos\ProyectoFinalAgenda\ProyectoFinalAgenda.WinForm\obj\Debug\ProyectoFinalAgenda.WinForm.csproj.AssemblyReference.cache
+C:\Users\jddca\source\repos\ProyectoFinalAgenda\ProyectoFinalAgenda.WinForm\obj\Debug\ProyectoFinalAgenda.WinForm.Properties.Resources.resources
+C:\Users\jddca\source\repos\ProyectoFinalAgenda\ProyectoFinalAgenda.WinForm\obj\Debug\ProyectoFinalAgenda.WinForm.csproj.GenerateResource.cache
+C:\Users\jddca\source\repos\ProyectoFinalAgenda\ProyectoFinalAgenda.WinForm\obj\Debug\ProyectoFinalAgenda.WinForm.csproj.CoreCompileInputs.cache
+C:\Users\jddca\source\repos\ProyectoFinalAgenda\ProyectoFinalAgenda.WinForm\bin\Debug\ProyectoFinalAgenda.WinForm.exe.config
+C:\Users\jddca\source\repos\ProyectoFinalAgenda\ProyectoFinalAgenda.WinForm\bin\Debug\ProyectoFinalAgenda.WinForm.exe
+C:\Users\jddca\source\repos\ProyectoFinalAgenda\ProyectoFinalAgenda.WinForm\bin\Debug\ProyectoFinalAgenda.WinForm.pdb
+C:\Users\jddca\source\repos\ProyectoFinalAgenda\ProyectoFinalAgenda.WinForm\obj\Debug\ProyectoFinalAgenda.WinForm.exe
+C:\Users\jddca\source\repos\ProyectoFinalAgenda\ProyectoFinalAgenda.WinForm\obj\Debug\ProyectoFinalAgenda.WinForm.pdb

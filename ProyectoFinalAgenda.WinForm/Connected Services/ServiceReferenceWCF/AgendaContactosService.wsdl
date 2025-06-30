@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="AgendaContactosService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://localhost:44363/Servicios/AgendaContactosService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://localhost:44363/Servicios/AgendaContactosService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://localhost:44363/Servicios/AgendaContactosService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ProyectoFinalAgenda.Models" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAgendaContactosService_DoWork_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoWork" />
+  </wsdl:message>
+  <wsdl:message name="IAgendaContactosService_DoWork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgendaContactosService_GetContactos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactos" />
+  </wsdl:message>
+  <wsdl:message name="IAgendaContactosService_GetContactos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgendaContactosService_GetContactoPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactoPorId" />
+  </wsdl:message>
+  <wsdl:message name="IAgendaContactosService_GetContactoPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactoPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgendaContactosService_AgregarContacto_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarContacto" />
+  </wsdl:message>
+  <wsdl:message name="IAgendaContactosService_AgregarContacto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarContactoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgendaContactosService_EditarContacto_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditarContacto" />
+  </wsdl:message>
+  <wsdl:message name="IAgendaContactosService_EditarContacto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditarContactoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgendaContactosService_EliminarContacto_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarContacto" />
+  </wsdl:message>
+  <wsdl:message name="IAgendaContactosService_EliminarContacto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarContactoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgendaContactosService_BuscarContactosPorNombre_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarContactosPorNombre" />
+  </wsdl:message>
+  <wsdl:message name="IAgendaContactosService_BuscarContactosPorNombre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarContactosPorNombreResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAgendaContactosService">
+    <wsdl:operation name="DoWork">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgendaContactosService/DoWork" message="tns:IAgendaContactosService_DoWork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgendaContactosService/DoWorkResponse" message="tns:IAgendaContactosService_DoWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgendaContactosService/GetContactos" message="tns:IAgendaContactosService_GetContactos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgendaContactosService/GetContactosResponse" message="tns:IAgendaContactosService_GetContactos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactoPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgendaContactosService/GetContactoPorId" message="tns:IAgendaContactosService_GetContactoPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgendaContactosService/GetContactoPorIdResponse" message="tns:IAgendaContactosService_GetContactoPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarContacto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgendaContactosService/AgregarContacto" message="tns:IAgendaContactosService_AgregarContacto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgendaContactosService/AgregarContactoResponse" message="tns:IAgendaContactosService_AgregarContacto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditarContacto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgendaContactosService/EditarContacto" message="tns:IAgendaContactosService_EditarContacto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgendaContactosService/EditarContactoResponse" message="tns:IAgendaContactosService_EditarContacto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarContacto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgendaContactosService/EliminarContacto" message="tns:IAgendaContactosService_EliminarContacto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgendaContactosService/EliminarContactoResponse" message="tns:IAgendaContactosService_EliminarContacto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarContactosPorNombre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAgendaContactosService/BuscarContactosPorNombre" message="tns:IAgendaContactosService_BuscarContactosPorNombre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAgendaContactosService/BuscarContactosPorNombreResponse" message="tns:IAgendaContactosService_BuscarContactosPorNombre_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAgendaContactosService" type="tns:IAgendaContactosService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DoWork">
+      <soap:operation soapAction="http://tempuri.org/IAgendaContactosService/DoWork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactos">
+      <soap:operation soapAction="http://tempuri.org/IAgendaContactosService/GetContactos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactoPorId">
+      <soap:operation soapAction="http://tempuri.org/IAgendaContactosService/GetContactoPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarContacto">
+      <soap:operation soapAction="http://tempuri.org/IAgendaContactosService/AgregarContacto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarContacto">
+      <soap:operation soapAction="http://tempuri.org/IAgendaContactosService/EditarContacto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarContacto">
+      <soap:operation soapAction="http://tempuri.org/IAgendaContactosService/EliminarContacto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarContactosPorNombre">
+      <soap:operation soapAction="http://tempuri.org/IAgendaContactosService/BuscarContactosPorNombre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AgendaContactosService">
+    <wsdl:port name="BasicHttpBinding_IAgendaContactosService" binding="tns:BasicHttpBinding_IAgendaContactosService">
+      <soap:address location="http://localhost:56779/Servicios/AgendaContactosService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

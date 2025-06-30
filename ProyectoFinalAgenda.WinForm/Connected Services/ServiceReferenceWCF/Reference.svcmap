@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="cea4ae9f-4edf-4ddb-b79c-7c7cefe7968e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://localhost:44363/Servicios/AgendaContactosService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AgendaContactosService.xsd" MetadataType="Schema" ID="87af44fb-7c5b-46ff-bcf8-e08c5f2a3472" SourceId="1" SourceUrl="https://localhost:44363/Servicios/AgendaContactosService.svc?xsd=xsd2" />
+    <MetadataFile FileName="AgendaContactosService.disco" MetadataType="Disco" ID="9c7a774b-9aa5-4a0d-bc4a-c0a45a2d9d1f" SourceId="1" SourceUrl="https://localhost:44363/Servicios/AgendaContactosService.svc?disco" />
+    <MetadataFile FileName="AgendaContactosService.wsdl" MetadataType="Wsdl" ID="897d74e2-1db6-49da-b0fc-a3f11cdd219e" SourceId="1" SourceUrl="https://localhost:44363/Servicios/AgendaContactosService.svc?wsdl" />
+    <MetadataFile FileName="AgendaContactosService1.xsd" MetadataType="Schema" ID="5dde9619-2cdc-45e1-9f3a-67fd5b0c644c" SourceId="1" SourceUrl="https://localhost:44363/Servicios/AgendaContactosService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AgendaContactosService2.xsd" MetadataType="Schema" ID="b677fa71-d2d2-4552-a2dc-1dc29adf0efb" SourceId="1" SourceUrl="https://localhost:44363/Servicios/AgendaContactosService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
